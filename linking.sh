@@ -7,3 +7,4 @@ java -jar Java.jar
 ./Rust
 ./Go
 ./Lua
+./Assembly
