@@ -4,6 +4,7 @@
 main:
     lea langname(%rip), %rdi
     call call_this
+    xor %eax, %eax
     ret
 .data
 
