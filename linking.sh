@@ -6,3 +6,4 @@ java -jar Java.jar
 ./Basic
 ./Rust
 ./Go
+./Lua

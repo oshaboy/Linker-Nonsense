@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <jni.h>
 #include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
+
+const char *   lua_tolstring(lua_State*,int,size_t*) __attribute__((weak));
 
 void call_this(const char * lang_name){
 	printf("This call is from %s\n", lang_name);
@@ -17,5 +21,9 @@ void CALL_THIS(const char * lang_name){
 
 int Bash_call_this(int argc, char * argv[]){
     call_this(argv[1]);
+    return 0;
+}
+int Lua_call_this(lua_State *L){
+    call_this(lua_tostring(L, 1));
     return 0;
 }
